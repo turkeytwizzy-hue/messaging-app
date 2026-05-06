@@ -3,7 +3,7 @@ import '@fastify/jwt';
 import { db } from '../db';
 import { users } from '../db/schema';
 import { eq } from 'drizzle-orm';
-import { verifyChallenge } from '@187/core';
+import { verifyChallenge } from '../crypto.js';
 
 interface RegisterBody {
   publicKey: string;

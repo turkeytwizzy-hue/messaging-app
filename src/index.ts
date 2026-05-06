@@ -2,19 +2,18 @@ import Fastify from 'fastify';
 import fastifyJwt from '@fastify/jwt';
 import fastifyWebsocket from '@fastify/websocket';
 import fastifyCors from '@fastify/cors';
-import '@fastify/jwt';
 import dotenv from 'dotenv';
-import { authRoutes } from './routes/auth';
-import { wsRoutes } from './routes/ws';
-import { channelRoutes } from './routes/channels';
-import { serverRoutes } from './routes/servers';
-import { friendRoutes } from './routes/friends';
+import { authRoutes } from './routes/auth.js';
+import { wsRoutes } from './routes/ws.js';
+import { channelRoutes } from './routes/channels.js';
+import { serverRoutes } from './routes/servers.js';
+import { friendRoutes } from './routes/friends.js';
 
 dotenv.config();
 
 const app = Fastify({ logger: true });
 
-// Open CORS for native app clients (C# desktop app doesn't enforce CORS)
+// Open CORS — C# desktop clients don't enforce browser CORS
 app.register(fastifyCors, {
   origin: true,
   credentials: true,
@@ -27,9 +26,7 @@ app.register(fastifyJwt, {
 
 app.register(fastifyWebsocket);
 
-app.get('/health', async () => {
-  return { status: 'ok' };
-});
+app.get('/health', async () => ({ status: 'ok' }));
 
 app.register(authRoutes, { prefix: '/auth' });
 app.register(wsRoutes);
@@ -40,7 +37,6 @@ app.register(friendRoutes);
 const start = async () => {
   try {
     const port = Number(process.env.PORT) || 3000;
-    // Bind to 0.0.0.0 so cloud hosts (Railway, Render, etc.) can expose the port
     await app.listen({ port, host: '0.0.0.0' });
     console.log(`Server running on port ${port}`);
   } catch (err) {
