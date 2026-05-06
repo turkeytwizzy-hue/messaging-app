@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1771953451975,
+      "tag": "0000_thick_doctor_faustus",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1772040881965,
+      "tag": "0001_rare_energizer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1772043741900,
+      "tag": "0002_short_tag",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1772044753201,
+      "tag": "0003_tidy_banshee",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1772136659387,
+      "tag": "0004_secret_bromley",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1772152033059,
+      "tag": "0005_superb_reptil",
+      "breakpoints": true
+    }
+  ]
+}

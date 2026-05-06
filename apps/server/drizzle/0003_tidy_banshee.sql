@@ -1,0 +1,1 @@
+ALTER TABLE "channels" ADD COLUMN "category" text DEFAULT 'Text Channels';
